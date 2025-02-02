@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R6 Hidden MMR Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>R6 Hidden MMR Calculator</h1>
+
+        <div class="intro">
+            <p>Welcome to the Rainbow Six Siege Hidden MMR Calculator! Estimate your true rank based on your visible MMR and RP gain.</p>
+        </div>
+
+        <div class="input-group">
+            <label for="visibleMMR">Visible MMR:</label>
+            <input type="number" id="visibleMMR" placeholder="Enter your visible MMR">
+        </div>
+
+        <div class="input-group">
+            <label for="rpGain">RP Gain per Win:</label>
+            <input type="number" id="rpGain" placeholder="Enter your RP per win">
+        </div>
+
+        <button onclick="calculateHiddenMMR()">Calculate</button>
+        
+        <div id="result">
+            <h3>Estimated Hidden MMR: <span id="hiddenMMR"></span></h3>
+            <h3>Estimated Rank: <span id="estimatedRank"></span></h3>
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="warning">
+            <p><strong>Disclaimer:</strong> The results can be inaccurate and may not fully represent your hidden MMR. This is just an estimate.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>
