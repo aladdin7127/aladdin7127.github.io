@@ -1,3 +1,4 @@
+// fuck js dog shit lang
 document.addEventListener("DOMContentLoaded", function () {
     let visiblemmr = document.getElementById("visibleMMR");
     let rpgain = document.getElementById("rpGain");
