@@ -16,27 +16,27 @@
         </div>
 
         <div class="input-group">
-            <label for="visibleMMR">Visible MMR:</label>
-            <input type="number" id="visibleMMR" placeholder="Enter your visible MMR">
+            <label for="visiblemmr">Visible MMR:</label>
+            <input type="number" id="visiblemmr" placeholder="Enter your visible MMR">
         </div>
 
         <div class="input-group">
-            <label for="rpGain">RP Gain per Win:</label>
-            <input type="number" id="rpGain" placeholder="Enter your RP per win">
+            <label for="rpgain">RP Gain per Win:</label>
+            <input type="number" id="rpgain" placeholder="Enter your RP per win">
         </div>
 
-        <button onclick="calculateHiddenMMR()">Calculate</button>
+        <button onclick="Calculate()">Calculate</button>
         
         <div id="result">
-            <h3>Estimated Hidden MMR: <span id="hiddenMMR"></span></h3>
-            <h3>Estimated Rank: <span id="estimatedRank"></span></h3>
+            <h3>Estimated Hidden MMR: <span id="hiddenmmr"></span></h3>
+            <h3>Estimated Rank: <span id="estimatedrank"></span></h3>
             <div class="progress-container">
-                <div id="progressBar"></div>
+                <div id="progressbar"></div>
             </div>
         </div>
 
         <div class="warning">
-            <p><strong>Disclaimer:</strong> The results can be inaccurate and may not fully represent your hidden MMR.</p>
+            <p><strong>Disclaimer:</strong> The results can be inaccurate and may not fully represent your hidden MMR. This is just an estimate.</p>
         </div>
     </div>
 
