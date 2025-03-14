@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", function () {
+    let visiblemmr = document.getElementById("visibleMMR");
+    let rpgain = document.getElementById("rpGain");
+
+    if (localStorage.getItem("MMR")) {
+        visiblemmr.value = localStorage.getItem("MMR");
+    }
+    if (localStorage.getItem("RP")) {
+        rpgain.value = localStorage.getItem("RP");
+    }
+
+    if (visiblemmr.value != "" && rpgain.value != "") {
+        calculateHiddenMMR();
+    }
+});
+
+
 function calculateHiddenMMR() {
     let visibleMMR = parseInt(document.getElementById("visibleMMR").value);
     let rpGain = parseInt(document.getElementById("rpGain").value);
@@ -19,6 +36,9 @@ function calculateHiddenMMR() {
     progressBar.style.width = `${Math.min(progress, 100)}%`;
 
     progressBar.style.backgroundColor = rankData.color;
+
+    localStorage.setItem("MMR", visibleMMR);
+    localStorage.setItem("RP", rpGain);
 }
 
 function getRank(mmr) {
