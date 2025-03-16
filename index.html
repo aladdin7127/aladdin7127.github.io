@@ -11,10 +11,6 @@
     <div class="container">
         <h1>R6 Hidden MMR Calculator</h1>
 
-        <div class="intro">
-            <p>Welcome to the Rainbow Six Siege Hidden MMR Calculator! Estimate your true rank based on your visible MMR and RP gain.</p>
-        </div>
-
         <div class="input-group">
             <label for="visiblemmr">Visible MMR:</label>
             <input type="number" id="visiblemmr" placeholder="Enter your visible MMR">
@@ -23,6 +19,16 @@
         <div class="input-group">
             <label for="rpgain">RP Gain per Win:</label>
             <input type="number" id="rpgain" placeholder="Enter your RP per win">
+        </div>
+
+        <div class="input-group">
+            <label for="reputation">Standing Reputation:</label>
+            <select id="reputation" name="reputation" class="dropdown">
+                <option value="exemplary">Exemplary</option>
+                <option value="esteemed">Esteemed</option>
+                <option value="respectable">Respectable</option>
+                <option value="disruptive">Disruptive/Dishonorable</option>
+            </select>
         </div>
 
         <button onclick="Calculate()">Calculate</button>

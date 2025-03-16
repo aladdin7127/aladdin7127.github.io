@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let VisibleMMR = document.getElementById("visiblemmr");
     let RPGain = document.getElementById("rpgain");
+    let Reputation = document.getElementById("reputation");
 
     if (localStorage.getItem("MMR")) {
         VisibleMMR.value = localStorage.getItem("MMR");
@@ -9,8 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("RP")) {
         RPGain.value = localStorage.getItem("RP");
     }
+    if (localStorage.getItem("Rep")) {
+        Reputation.value = localStorage.getItem("Rep");
+    }
 
-    if (VisibleMMR.value != "" && RPGain.value != "") {
+    if (VisibleMMR.value != "" && RPGain.value != "" && Reputation.value != "") {
         Calculate();
     }
 });
@@ -18,8 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
 function Calculate() {
     let VisibleMMR = parseInt(document.getElementById("visiblemmr").value);
     let RPGain = parseInt(document.getElementById("rpgain").value);
+    let Reputation = document.getElementById("reputation").value;
 
-    let HiddenMMR = Math.round(VisibleMMR + (RPGain - 25) * 15);
+    let ExtraRP = 0;
+    if (Reputation == "exemplary") {
+        ExtraRP = 3;
+    } else if (Reputation == "esteemed") {
+        ExtraRP = 2;
+    } else if (Reputation == "respectable") {
+        ExtraRP = 1;
+    }
+
+    let HiddenMMR = Math.round(VisibleMMR + (RPGain - 25 - ExtraRP) * 15);
     document.getElementById("hiddenmmr").textContent = HiddenMMR;
     
     let Rank = getRank(HiddenMMR);
@@ -33,6 +47,7 @@ function Calculate() {
 
     localStorage.setItem("MMR", VisibleMMR);
     localStorage.setItem("RP", RPGain);
+    localStorage.setItem("Rep", Reputation);
 }
 
 function getRank(mmr) {

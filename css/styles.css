@@ -140,6 +140,25 @@ button:hover {
     border-radius: 6px;
 }
 
+.dropdown {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #2a2f3a;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dropdown:focus {
+    outline: none;
+    border: 1px solid #66ccff;
+    background-color: #444;
+}
+
 .champion { color: #ff0066; }
 .diamond { color: #7C3E8C; }
 .emerald { color: #00ff88; }
